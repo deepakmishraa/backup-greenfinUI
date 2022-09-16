@@ -1,0 +1,204 @@
+<div id="app">
+  <div id="sidebar" class="active">
+    <div class="sidebar-wrapper bg-light active">
+      <div class="sidebar-header bg-light">
+        <div class="d-flex justify-content-between">
+          <!-- <div class="logo">
+                    <a href="#"
+                      ><img
+                        src="https://www.greenfin.ai/images/greenFinLogo.png"
+                        alt="Logo"
+                        srcset=""
+                    /></a>
+                  </div> -->
+          <div
+            class="auth-logo text-center"
+            style="margin-bottom: 1rem !important"
+          >
+            <a href="index.html"
+              ><img
+                src="https://www.greenfin.ai/images/greenFinLogo.png"
+                alt="Logo"
+                style="height: 8rem !important"
+            /></a>
+          </div>
+          <div class="toggler">
+            <a href="#" class="sidebar-hide d-xl-none d-block"
+              ><i class="bi bi-x bi-middle"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+      <div class="sidebar-menu active">
+        <ul class="menu">
+          <li class="sidebar-item" id="adminhome">
+            <a routerLink="/user/dashboard" class="sidebar-link">
+              <i class="fas fa-cog"></i>
+              <span>Deal Details </span>
+            </a>
+          </li>
+          <!-- <li class="sidebar-item" id="seoadmin">
+                    <a routerLink="/admin/seo-admin" class="sidebar-link">
+                      <i class="fas fa-cog"></i>
+                      <span>change Password</span>
+                    </a>
+                  </li> -->
+          <!-- <li class="sidebar-item" id="seoadmin">
+                    <a routerLink="/admin/seo-admin" class="sidebar-link">
+                      <i class="fas fa-cog"></i>
+                      <span>Profile</span>
+                    </a>
+                  </li> -->
+
+          <li class="sidebar-item active" id="setting">
+            <a routerLink="/user/profile" class="sidebar-link">
+              <i class="fas fa-cog"></i>
+              <span>profile</span>
+            </a>
+          </li>
+
+          <li class="sidebar-item" id="logout">
+            <a class="sidebar-link">
+              <i class="fas fa-cog"></i>
+              <span>LogOut</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <button class="sidebar-toggler btn x">
+        <i data-feather="x"></i>
+      </button>
+    </div>
+  </div>
+</div>
+
+<div id="main">
+  <header class="mb-3">
+    <a href="#" class="burger-btn d-block d-xl-none">
+      <i class="bi bi-justify fs-3"></i>
+    </a>
+  </header>
+
+  <div class="page-heading">
+    <div class="page-title">
+      <div class="row">
+        <div class="col-12 col-md-6 order-md-1 order-last">
+          <h3>Profile</h3>
+          <p class="text-subtitle text-muted">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+          </p>
+        </div>
+        <div class="col-12 col-md-6 order-md-2 order-first">
+          <nav
+            aria-label="breadcrumb"
+            class="breadcrumb-header float-start float-lg-end"
+          >
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item">
+                <a href="index.html">Dashboard</a>
+              </li>
+              <li class="breadcrumb-item active" aria-current="page">
+                Profile
+              </li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+    </div>
+    <section class="section about-section gray-bg" id="about">
+      <div class="container">
+        <div class="row align-items-center flex-row-reverse">
+          <div class="col-lg-6">
+            <div class="about-text go-to">
+              <h3 class="dark-color">About Me</h3>
+              <h6 class="theme-color lead">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              </h6>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum
+                quibusdam dolores facilis sed, tenetur debitis dignissimos
+                praesentium! Facilis dolore fugit, quibusdam odio repudiandae et
+                voluptates reiciendis. Totam laudantium nihil fugiat.
+              </p>
+              <div class="row about-list">
+                <div class="col-md-6">
+                  <div class="media">
+                    <label>Birthday</label>
+                    <p>4th april 1998</p>
+                  </div>
+                  <div class="media">
+                    <label>Age</label>
+                    <p>22 Yr</p>
+                  </div>
+                  <div class="media">
+                    <label>Address 2</label>
+                    <p>California, USA</p>
+                  </div>
+                  <div class="media">
+                    <label>Address 2</label>
+                    <p>California, USA</p>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="media">
+                    <label>E-mail</label>
+                    <p>info@test.com</p>
+                  </div>
+                  <div class="media">
+                    <label>Phone</label>
+                    <p>820-885-3321</p>
+                  </div>
+                  <div class="media">
+                    <label>Skype</label>
+                    <p>skype.0404</p>
+                  </div>
+                  <div class="media">
+                    <label>Freelance</label>
+                    <p>Available</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="about-avatar">
+              <img
+                src="https://bootdey.com/img/Content/avatar/avatar7.png"
+                title=""
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+        <!-- <div class="counter">
+          <div class="row">
+            <div class="col-6 col-lg-3">
+              <div class="count-data text-center">
+                <h6 class="count h2" data-to="500" data-speed="500">500</h6>
+                <p class="m-0px font-w-600">Happy Clients</p>
+              </div>
+            </div>
+            <div class="col-6 col-lg-3">
+              <div class="count-data text-center">
+                <h6 class="count h2" data-to="150" data-speed="150">150</h6>
+                <p class="m-0px font-w-600">Project Completed</p>
+              </div>
+            </div>
+            <div class="col-6 col-lg-3">
+              <div class="count-data text-center">
+                <h6 class="count h2" data-to="850" data-speed="850">850</h6>
+                <p class="m-0px font-w-600">Photo Capture</p>
+              </div>
+            </div>
+            <div class="col-6 col-lg-3">
+              <div class="count-data text-center">
+                <h6 class="count h2" data-to="190" data-speed="190">190</h6>
+                <p class="m-0px font-w-600">Telephonic Talk</p>
+              </div>
+            </div>
+          </div>
+        </div> -->
+      </div>
+    </section>
+  </div>
+</div>

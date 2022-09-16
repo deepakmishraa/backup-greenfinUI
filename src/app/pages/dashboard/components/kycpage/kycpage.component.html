@@ -1,0 +1,493 @@
+<div id="auth">
+  <div class="container">
+    <div class="row h-100">
+      <div class="col-lg-12 p-lg-5 col-12">
+        <div id="auth-left ">
+          <h1 class="auth-title text-center mb-1 green">
+            Verify Your Identity
+          </h1>
+          <!-- <p class="h1  er">Welcome !</p> -->
+          <p class="auth-subtitle mb-2 text-center">
+            For KYC/AML purpose. We need to collect some information about you
+          </p>
+
+          <form
+            #kycdetails="ngForm"
+            (ngSubmit)="onClickSubmit(kycdetails.value)"
+            method="POST"
+          >
+            <div class="row">
+              <div class="col-4 py-4">
+                <p class="h2 green text-center">1</p>
+                <p class="h4 blue text-capitalize mb-3">profile</p>
+                <div class="row">
+                  <div class="col-8">
+                    <p>
+                      <span class="h6 blue mb-2">Rahul</span>
+                      <br />
+                      <span class="">test@gmail.com</span>
+                      <br />
+                      <span class="">+91 9552391395</span>
+                    </p>
+                  </div>
+                  <div class="col-4 ">
+                    <div
+                      class="d-flex align-items-center justify-content-center border  " style="border-radius: 50%;"
+                      *ngIf="this.preveiwlogo == undefined"
+                    >
+                      <label class="d-flex align-items-center justify-content-center" style="height: 75px;">
+                        Logo
+                        <input
+                          type="file"
+                          (change)="uploadlogo($event)"
+                          style="position: fixed; top: -100%;"
+                        />
+                      </label>
+                    </div>
+                    <div
+                      class="text-center border rounded-circle"
+                      *ngIf="this.preveiwlogo != undefined"
+                    >
+                      <label>
+                        <img
+                          src="{{ this.preveiwlogo }}"
+                          style="height: 75px;border-radius: 50%;height: 75px;"
+                        />
+                        <input
+                          type="file"
+                          (change)="uploadlogo($event)"
+                          style="position: fixed; top: -100%"
+                        />
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <p>PERSONAL DATA</p>
+                <div class="row mb-3">
+                  <div class="col-4"><span class=" ">Title</span></div>
+                  <div class="col-8">
+                    <!-- <input
+                    type="text"
+                    class="form-control form-control border-0 bg-light"
+                    placeholder=""
+                    name="title"
+                    ngModel
+                  /> -->
+                    <select
+                      name="title"
+                      ngModel
+                      class="form-control form-control border-0 bg-light"
+                    >
+                      <option value="Mr">Mr</option>
+                      <option value="Miss">Miss</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <div class="col-4">
+                    <span class=" ">Date Of Birth</span>
+                  </div>
+                  <div class="col-8">
+                    <input
+                      type="date"
+                      class="form-control form-control border-0 bg-light"
+                      placeholder="pick a day"
+                      name="birthday"
+                      ngModel
+                    />
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <div class="col-4">
+                    <span class=" ">Tax residence</span>
+                  </div>
+                  <div class="col-8">
+                    <select
+                      name="tex_residence"
+                      ngModel
+                      class="form-control form-control border-0 bg-light"
+                    >
+                      <option value="India">India</option>
+                      <option value="Usa">USA</option>
+                      <option value="Uk">UK</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <div class="col-4">
+                    <span class=" ">Country of residence </span>
+                  </div>
+                  <div class="col-8">
+                    <select
+                      name="country_residence"
+                      ngModel
+                      class="form-control form-control border-0 bg-light"
+                    >
+                      <option value="India">India</option>
+                      <option value="Usa">USA</option>
+                      <option value="Uk">UK</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <div class="col-4">
+                    <span class=" ">Primary citizenship </span>
+                  </div>
+                  <div class="col-8">
+                    <select
+                      name="primary_citizenship"
+                      ngModel
+                      class="form-control form-control border-0 bg-light"
+                    >
+                      <option value="India">India</option>
+                      <option value="Usa">USA</option>
+                      <option value="Uk">UK</option>
+                    </select>
+                  </div>
+                </div>
+
+                <p>MAILING ADDRESS</p>
+                <div class="row mb-2">
+                  <div class="col-4">
+                    <span class=" ">Address line 1</span>
+                  </div>
+                  <div class="col-8">
+                    <input
+                      type="text"
+                      class="form-control form-control border-0 bg-light"
+                      placeholder="address_1 "
+                      name="address_1"
+                      ngModel
+                    />
+                  </div>
+                </div>
+                <div class="row mb-2">
+                  <div class="col-4">
+                    <span class=" ">Address line 2</span>
+                  </div>
+                  <div class="col-8">
+                    <input
+                      type="text"
+                      class="form-control form-control border-0 bg-light"
+                      placeholder="address_2"
+                      name="address_2"
+                      ngModel
+                    />
+                  </div>
+                </div>
+
+                <div class="row mb-2">
+                  <div class="col-4">
+                    <span class=" ">City / Town</span>
+                  </div>
+                  <div class="col-8">
+                    <input
+                      type="text"
+                      class="form-control form-control border-0 bg-light"
+                      placeholder="City"
+                      name="city"
+                      ngModel
+                    />
+                  </div>
+                </div>
+                <div class="row mb-2">
+                  <div class="col-4">
+                    <span class=" ">Zip / Postal code</span>
+                  </div>
+                  <div class="col-8">
+                    <input
+                      type="text"
+                      class="form-control form-control border-0 bg-light"
+                      placeholder="Zip / Postal code"
+                      name="zip"
+                      ngModel
+                    />
+                  </div>
+                </div>
+
+                <div class="row mb-2">
+                  <div class="col-4">
+                    <span class="">Country</span>
+                  </div>
+                  <div class="col-8">
+                    <input
+                      type="text"
+                      class="form-control form-control border-0 bg-light"
+                      placeholder="Country"
+                      name="country"
+                      ngModel
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-4 py-4">
+                <p class="h2 green text-center">2</p>
+
+                <p class="h4 blue text-capitalize mb-3">
+                  Roles In Our Community
+                </p>
+                <div class="form-check mb-3">
+                  <div class="custom-control custom-checkbox">
+                    <input
+                      type="checkbox"
+                      class="form-check-input form-check-info"
+                      name="customCheck"
+                      id="customColorCheck5"
+                      value="Project Developer"
+                    />
+                    <label class="form-check-label" for="customColorCheck5"
+                      >Project Developer</label
+                    >
+                  </div>
+                </div>
+                <div class="form-check mb-3">
+                  <div class="custom-control custom-checkbox">
+                    <input
+                      type="checkbox"
+                      class="form-check-input form-check-info"
+                      name="customCheck"
+                      id="customColorCheck5"
+                      value="Project Developer"
+                    />
+                    <label class="form-check-label" for="customColorCheck5"
+                      >Asset Owner</label
+                    >
+                  </div>
+                </div>
+                <div class="form-check mb-3">
+                  <div class="custom-control custom-checkbox">
+                    <input
+                      type="checkbox"
+                      class="form-check-input form-check-info"
+                      name="customCheck"
+                      id="customColorCheck5"
+                      value="Project Developer"
+                    />
+                    <label class="form-check-label" for="customColorCheck5"
+                      >Investor</label
+                    >
+                  </div>
+                </div>
+                <div class="form-check mb-3">
+                  <div class="custom-control custom-checkbox">
+                    <input
+                      type="checkbox"
+                      class="form-check-input form-check-info"
+                      name="customCheck"
+                      id="customColorCheck5"
+                      value="Project Developer"
+                    />
+                    <label class="form-check-label" for="customColorCheck5"
+                      >Broker / Agent</label
+                    >
+                  </div>
+                </div>
+                <div class="form-check mb-3">
+                  <div class="custom-control custom-checkbox">
+                    <input
+                      type="checkbox"
+                      class="form-check-input form-check-info"
+                      name="customCheck"
+                      id="customColorCheck5"
+                      value="Project Developer"
+                    />
+                    <label class="form-check-label" for="customColorCheck5"
+                      >Third Party Due Diligence</label
+                    >
+                  </div>
+                </div>
+                <div class="form-check mb-3">
+                  <div class="custom-control custom-checkbox">
+                    <input
+                      type="checkbox"
+                      class="form-check-input form-check-info"
+                      name="customCheck"
+                      id="customColorCheck5"
+                      value="Project Developer"
+                    />
+                    <label class="form-check-label" for="customColorCheck5"
+                      >Technical</label
+                    >
+                  </div>
+                </div>
+
+                <div class="form-check mb-3">
+                  <div class="custom-control custom-checkbox">
+                    <input
+                      type="checkbox"
+                      class="form-check-input form-check-info"
+                      name="customCheck"
+                      id="customColorCheck5"
+                      value="Project Developer"
+                    />
+                    <label class="form-check-label" for="customColorCheck5"
+                      >Environment
+                    </label>
+                  </div>
+                </div>
+                <div class="form-check mb-3">
+                  <div class="custom-control custom-checkbox">
+                    <input
+                      type="checkbox"
+                      class="form-check-input form-check-info"
+                      name="customCheck"
+                      id="customColorCheck5"
+                      value="Project Developer"
+                    />
+                    <label class="form-check-label" for="customColorCheck5"
+                      >Legal</label
+                    >
+                  </div>
+                </div>
+                <div class="form-check mb-3">
+                  <div class="custom-control custom-checkbox">
+                    <input
+                      type="checkbox"
+                      class="form-check-input form-check-info"
+                      name="customCheck"
+                      id="customColorCheck5"
+                      value="Project Developer"
+                    />
+                    <label class="form-check-label" for="customColorCheck5"
+                      >Finance
+                    </label>
+                  </div>
+                </div>
+                <div class="form-check mb-3">
+                  <div class="custom-control custom-checkbox">
+                    <input
+                      type="checkbox"
+                      class="form-check-input form-check-info"
+                      name="customCheck"
+                      id="customColorCheck5"
+                      value="Project Developer"
+                    />
+                    <label class="form-check-label" for="customColorCheck5">
+                      Accounting
+                    </label>
+                  </div>
+                </div>
+
+                <div class="form-check mb-3">
+                  <div class="custom-control custom-checkbox">
+                    <input
+                      type="checkbox"
+                      class="form-check-input form-check-info"
+                      name="customCheck"
+                      id="customColorCheck5"
+                      value="Project Developer"
+                    />
+                    <label class="form-check-label" for="customColorCheck5">
+                      Taxes
+                    </label>
+                  </div>
+                </div>
+                <div class="form-check mb-5">
+                  <div class="custom-control custom-checkbox">
+                    <input
+                      type="checkbox"
+                      class="form-check-input form-check-info"
+                      name="customCheck"
+                      id="customColorCheck5"
+                      value="Project Developer"
+                    />
+                    <label class="form-check-label" for="customColorCheck5">
+                      Credit rating
+                    </label>
+                  </div>
+                </div>
+
+                <p>
+                  UPLOAD DOCUMENTS
+                  <br />
+
+                  <br />
+                  <span class="green"
+                    >We are legally required to verify your identity before
+                    allowing you to invest. Your documents are only used for
+                    this purpose.</span
+                  ><br />
+                  <span
+                    >Please upload your Passport or your ID card issued within
+                    the EU. Please include both sides of the ID card.</span
+                  >
+                </p>
+
+                <div class="text-center border bg-light">
+                  <label class="py-4">
+                    upload documents
+                    <input type="file" style="position: fixed; top: -100%" />
+                  </label>
+                </div>
+                <p data-v-35ea371c="" class="available-formats">
+                  Available formats: jpg, png, pdf, max size: 10mb
+                </p>
+              </div>
+              <div class="col-4 py-4">
+                <p class="h2 green text-center">3</p>
+                <p class="h4 blue text-capitalize mb-3">
+                  Please Check information Below
+                </p>
+                <div class="form-check mt-5 mb-4">
+                  <div class="custom-control custom-checkbox">
+                    <input
+                      type="checkbox"
+                      class="form-check-input form-check-info"
+                      name="customCheck"
+                      id="customColorCheck5"
+                      value="Project Developer"
+                    />
+                    <label class="form-check-label" for="customColorCheck5"
+                      >I hereby confirm that the data given above is true and
+                      give Finxtradez Private Limited. my consent to process my data
+                      according to the Privacy Policy</label
+                    >
+                  </div>
+                </div>
+
+                <div class="form-check mb-4">
+                  <div class="custom-control custom-checkbox">
+                    <input
+                      type="checkbox"
+                      class="form-check-input form-check-info"
+                      name="customCheck"
+                      id="customColorCheck5"
+                      value="Project Developer"
+                    />
+                    <label class="form-check-label" for="customColorCheck5"
+                      >By creating a Finxtradez Private Limited account, you're
+                      agreeing to accept the our Terms and Conditions</label
+                    >
+                  </div>
+                </div>
+
+                <div class="form-check mb-4">
+                  <div class="custom-control custom-checkbox">
+                    <input
+                      type="checkbox"
+                      class="form-check-input form-check-info"
+                      name="customCheck"
+                      id="customColorCheck5"
+                      value="Project Developer"
+                    />
+                    <label class="form-check-label" for="customColorCheck5"
+                      >For any investments I engage in, I am either the
+                      legitimate beneficial owner of the funds I'm investing or
+                      fully authorized by the legal owners to invest on their
+                      behalf
+                    </label>
+                  </div>
+                </div>
+
+                <button class="btn greencolorbg btn-block btn-lg shadow">
+                  Submit For Review
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

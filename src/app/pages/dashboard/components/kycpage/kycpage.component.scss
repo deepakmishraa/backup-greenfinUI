@@ -1,0 +1,23 @@
+div span{
+    font-size: 0.9rem;
+}
+label {
+    display: inline-block;
+    background:none;
+    // border: 1px outset #ccc;
+
+   
+   
+}
+
+label:active {
+  border-style: inset;
+}
+
+.available-formats[data-v-35ea371c] {
+    font-family: Montserrat-Regular;
+    font-size: 12px;
+    color: #a3abc1;
+    margin-top: 12px;
+}
+
